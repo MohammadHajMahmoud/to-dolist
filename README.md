@@ -1,2 +1,2 @@
-# to-dolist
- simple to do list project
+# todolist
+ simple to-do list project

@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Courgette', cursive;
+  background-image: linear-gradient(to right, #e5f3ef, #142242);
+  color: #fff;
+}
+.container{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#header{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 70px;
+  padding: 0 20px;
+}
+h2{
+    color: #233150;
+    font-size: 2rem;
+}
+.user_input{
+    justify-content: center;
+  margin-top: 2px;
+  width: 350px;
+  text-align: center;
+  display: flex;
+}
+input{
+    height: 39px;
+    font-size: 18px;
+    font-family: 'Courgette', cursive;
+}
+
+.user_input input{
+  width: 75%;
+  outline: none;
+  padding: 8px;
+  border: 1px solid lightgray;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.user_input input:focus{
+  box-shadow: 0 0 5px #6e8ac7;
+  border: 1px solid #4b547e;
+}
+.user_input button{
+   font-family: 'Courgette', cursive;
+   font-size: 16x;
+
+  padding: 8px;
+  width: fit-content;
+  color: black;
+  cursor: pointer;
+  outline: none;
+  background-color: rgb(184, 189, 212);
+  border: 1px solid lightgray;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+button:hover{
+   color: white;
+   transition: ease-out 0.3s;
+}
+
+#to_do_list{
+  width: 500px;
+  margin: auto;
+}
+.item{
+  display: flex;
+  justify-content:space-between;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  padding: 1rem;
+  color: #454545;
+  margin-top:10px;
+  font-size: 16px;
+  background-color: white;
+  border: 1px solid lightgray;
+  text-transform: uppercase;
+  border-radius: 13px;
+}
+.item:hover{
+  box-shadow: 0 0 20px #565c92;
+  border: 1px solid #664e85;
+}
+.item i{
+  cursor: pointer;
+  margin: 0 5px;
+  color: #454545;
+}
+ i:hover{
+color: #aaa6e4;
+transition: 0.5s;
+}
+
+.item p{
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 30px;
+    padding: 3px;
+}

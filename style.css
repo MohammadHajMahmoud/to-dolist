@@ -111,12 +111,3 @@ transition: 0.5s;
     height: 30px;
     padding: 3px;
 }
-@media screen and (max-width: 500px) {
-  #to_do_list{
-    width: 360px;
-  }
-    .user_input{
-      width: 60%;
-  }
-  
-}

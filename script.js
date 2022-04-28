@@ -3,25 +3,30 @@ const data= JSON.parse(localStorage.getItem('tasks'))? JSON.parse(localStorage.g
 document.querySelector("#input").addEventListener("keydown", (event) => {
     if(event.key === "Enter"){
       const input = document.querySelector("#input");
-        if(!input.value)
+        if(!input.value){
           alert("Please add a Task");
-        else
-        todos.push(input.value)
-        localStorage.setItem('tasks',JSON.stringify(todos))
-      addItem(input.value);
+
+           }else{
+          todos.push(input.value)
+          localStorage.setItem('tasks',JSON.stringify(todos))
+           addItem(input.value);
+        }
+        
     } 
-  });
+});
 
   document.querySelector("#add_item").addEventListener("click", () => {
     const input = document.querySelector("#input");
-      if(!input.value)
-          alert("Please add a Task");
+    if(!input.value){
+      alert("Please add a Task");
 
-      else
+       }else{
       todos.push(input.value)
       localStorage.setItem('tasks',JSON.stringify(todos))
-      addItem(input.value);
-  });
+       addItem(input.value);
+    }
+
+});
   
 
    addItem = (input) => {
@@ -30,23 +35,27 @@ document.querySelector("#input").addEventListener("keydown", (event) => {
     const div = document.createElement("div");
     const text = document.createElement("p");
     const trashIcon = document.createElement("i");
-    const editBtn = document.createElement("i");
-    editBtn.textContent = "Edit";
     item.className = "item";
     text.textContent = input;
     trashIcon.className = "fas fa-trash";
     trashIcon.style.color = "darkgray";
+    
     trashIcon.addEventListener("click", () => {
+      let tasks;
+      if(localStorage.getItem("tasks")==null){
+        tasks =[];
+      }else{
+        tasks = JSON.parse(localStorage.getItem("tasks"));
+      }
+      const todoIndex =text.textContent;
+      tasks.splice(tasks.indexOf(todoIndex),1)
+      localStorage.setItem("tasks",JSON.stringify(tasks))
       item.remove();
     })
-    editBtn.addEventListener("click", function () {
-        text.contentEditable = true;
-        text.focus();
-      });
+    
     div.appendChild(trashIcon);
     item.appendChild(text);
     item.appendChild(div);
-    item.appendChild(editBtn);
 
     document.querySelector("#to_do_list").appendChild(item);
     document.querySelector("#input").value = "";
@@ -54,3 +63,6 @@ document.querySelector("#input").addEventListener("keydown", (event) => {
   data.map((todo)=>{
     addItem(todo);
   })
+ 
+   
+  

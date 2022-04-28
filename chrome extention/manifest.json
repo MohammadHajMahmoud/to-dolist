@@ -1,0 +1,11 @@
+{
+    "name": "to-doList",
+    "version": "1.0.0",
+    "description": "your tasks",
+    "manifest_version": 3,
+    "author": "Mohammad hajMahmoud",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "to do"
+    }
+}

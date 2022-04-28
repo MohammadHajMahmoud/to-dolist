@@ -1,5 +1,4 @@
-const todos=JSON.parse(localStorage.getItem('tasks')) ? JSON.parse(localStorage.getItem('tasks')):[];
-const data= JSON.parse(localStorage.getItem('tasks'))? JSON.parse(localStorage.getItem('tasks')):[];
+const todos=JSON.parse(localStorage.getItem("tasks")) ? JSON.parse(localStorage.getItem("tasks")):[];
 document.querySelector("#input").addEventListener("keydown", (event) => {
     if(event.key === "Enter"){
       const input = document.querySelector("#input");
@@ -47,10 +46,11 @@ document.querySelector("#input").addEventListener("keydown", (event) => {
       }else{
         tasks = JSON.parse(localStorage.getItem("tasks"));
       }
-      const todoIndex =text.textContent;
-      tasks.splice(tasks.indexOf(todoIndex),1)
-      localStorage.setItem("tasks",JSON.stringify(tasks))
-      item.remove();
+      const todoIndex = text.textContent;
+      todos.splice(todos.indexOf(todoIndex), 1);
+      tasks.splice(tasks.indexOf(todoIndex), 1);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      item.style.display='none';
     })
     
     div.appendChild(trashIcon);
@@ -60,7 +60,7 @@ document.querySelector("#input").addEventListener("keydown", (event) => {
     document.querySelector("#to_do_list").appendChild(item);
     document.querySelector("#input").value = "";
   }
-  data.map((todo)=>{
+ todos.map((todo)=>{
     addItem(todo);
   })
  
